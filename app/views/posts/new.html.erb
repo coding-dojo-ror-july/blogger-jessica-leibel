@@ -1,0 +1,16 @@
+<h1>New Post</h1>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red;"><%= error %></p>
+  <% end %>
+<% end %>
+<form action="/blogs/<%= @blog_id %>/posts" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label>Title:</label>
+  <input type="text" name="post[title]"><br>
+  <label>Content:</label>
+  <textarea name="post[content]"></textarea>
+  <button type="submit">Create Post</button>
+
+
+

@@ -1,0 +1,26 @@
+
+<% if @user %>
+  <a href="/signout">Sign Out</a>
+  <h1><%= @user.username %></h1>
+<% else %>
+  <a href="/signin">Sign In</a>
+<% end %>
+
+<h1>Blogs:</h1>
+<ul>
+<% @blogs.each do |blog| %>
+  <li>
+    <a href='blogs/<%= blog.id %>/show'><%= blog.title %></a>
+  </li>
+<% end %> 
+</ul> 
+
+
+
+
+
+
+
+<a href="/blogs/<%= @user_blog.id %>/posts/new">New Post</a>
+
+
